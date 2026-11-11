@@ -3,15 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Vu Nguyen · Websites, Automation &amp; Chrome Extensions</title>
-<meta name="description" content="Senior Software Engineer in Seattle with 10+ years of experience. I build websites, business automation, Chrome extensions and web apps for small businesses across the US, with fixed quotes and weekly demos over Zoom.">
-<meta property="og:title" content="Vu Nguyen · Websites, Automation &amp; Chrome Extensions">
-<meta property="og:description" content="Websites, automation and custom tools for small businesses. Fixed quotes, weekly demos, one engineer start to finish.">
+<title data-vi="The Site Handyman · Website, tự động hóa và Chrome extension">The Site Handyman · Websites, Automation &amp; Chrome Extensions</title>
+<meta name="description" content="The Site Handyman: Vu Nguyen, a Senior Software Engineer in Seattle with 10+ years of experience, builds websites, business automation, Chrome extensions and web apps for small businesses across the US. Fixed quotes, weekly demos, English or Vietnamese.">
+<link rel="canonical" href="https://thesitehandyman.com/">
+<meta property="og:url" content="https://thesitehandyman.com/">
+<meta property="og:site_name" content="The Site Handyman">
+<meta property="og:title" content="The Site Handyman · Websites, Automation &amp; Chrome Extensions">
+<meta property="og:description" content="Websites, automation and custom tools for small businesses, from big builds to small fixes. Fixed quotes, weekly demos, one engineer start to finish.">
 <meta property="og:type" content="website">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%234F46E5'/%3E%3Ctext x='16' y='21' font-family='Arial' font-weight='700' font-size='13' fill='white' text-anchor='middle'%3EVN%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%234F46E5'/%3E%3Ctext x='16' y='21' font-family='Arial' font-weight='700' font-size='13' fill='white' text-anchor='middle'%3ESH%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap">
 <style>
 :root {
   --bg: #FFFFFF; --surface: #F8FAFC; --card: #FFFFFF; --line: #E5E7EB; --line-strong: #CBD5E1;
@@ -66,7 +69,13 @@ p { margin: 0; }
 .nav-links a:hover { color: var(--ink); }
 .nav-links .nav-cta { background: var(--cta-bg); color: var(--cta-fg); padding: 10px 16px; border-radius: 10px; font-weight: 500; }
 .nav-links .nav-cta:hover { color: var(--cta-fg); }
+.lang-btn { font: inherit; font-size: 14px; font-weight: 500; color: var(--ink); background: none; border: 1px solid var(--line-strong); border-radius: 10px; padding: 8px 12px; cursor: pointer; }
+.lang-btn:hover { background: var(--chip); }
 @media (max-width: 760px) { .nav-links a:not(.nav-cta) { display: none; } }
+@media (max-width: 480px) { .nav-links .nav-cta { display: none; } }
+/* Geist has no Vietnamese glyphs; Be Vietnam Pro only downloads when Vietnamese is shown */
+html[lang="vi"] :is(body, .eyebrow, .timeline b) { font-family: "Be Vietnam Pro", system-ui, sans-serif; }
+html[lang="vi"] h1, html[lang="vi"] h2, html[lang="vi"] h3 { letter-spacing: -0.01em; line-height: 1.25; }
 
 /* hero */
 .hero { padding: 96px 0 80px; }
@@ -104,7 +113,7 @@ p { margin: 0; }
 .meta a { margin-left: auto; font-size: 14px; font-weight: 500; text-decoration: none; }
 .meta a:hover { text-decoration: underline; }
 .sub-head { font-size: 22px; margin: 64px 0 20px; }
-.case { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 480px), 1fr)); }
+.case { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); }
 .case .card { display: flex; flex-direction: column; gap: 12px; }
 .case .label { font-size: 13px; color: var(--muted); }
 .mock { border-radius: 12px; background: var(--surface); border: 1px solid var(--line); padding: 18px; font-family: "Geist Mono", ui-monospace, monospace; font-size: 13px; color: var(--ink-2); display: flex; flex-direction: column; gap: 8px; margin-bottom: 6px; }
@@ -175,13 +184,14 @@ footer a { color: var(--muted); }
 
 <header class="site-header">
   <div class="wrap nav">
-    <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true">VN</span>Vu Nguyen</a>
+    <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true">SH</span>The Site Handyman</a>
     <nav class="nav-links" aria-label="Main">
-      <a href="#services">Services</a>
-      <a href="#work">Work</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#about">About</a>
-      <a class="nav-cta" href="#contact">Book a free call</a>
+      <a href="#services" data-vi="Dịch vụ">Services</a>
+      <a href="#work" data-vi="Dự án">Work</a>
+      <a href="#pricing" data-vi="Bảng giá">Pricing</a>
+      <a href="#about" data-vi="Giới thiệu">About</a>
+      <button class="lang-btn" id="lang-btn" type="button" lang="vi" aria-label="Đọc bằng tiếng Việt">Tiếng Việt</button>
+      <a class="nav-cta" href="#contact" data-vi="Đặt lịch gọi miễn phí">Book a free call</a>
     </nav>
   </div>
 </header>
@@ -190,18 +200,18 @@ footer a { color: var(--muted); }
 
   <section class="hero">
     <div class="wrap">
-      <p class="status">Taking new projects</p>
-      <h1>Websites, automation and custom tools for small businesses.</h1>
-      <p class="lead">I'm Vu, a Senior Software Engineer in Seattle with 10+ years of building for the web. I make websites that bring in customers, automate the busywork that eats your week, and build custom Chrome extensions and web apps. I work with businesses anywhere in the US over Zoom and email.</p>
+      <p class="status" data-vi="Đang nhận dự án mới">Taking new projects</p>
+      <h1 data-vi="Website, tự động hóa và công cụ riêng cho doanh nghiệp nhỏ.">Websites, automation and custom tools for small businesses.</h1>
+      <p class="lead" data-vi="Tôi là Vu, kỹ sư phần mềm cấp cao ở Seattle với hơn 10 năm kinh nghiệm làm web, và là “thợ sửa” website của bạn. Tôi làm website giúp bạn có thêm khách, tự động hóa những việc lặt vặt chiếm hết thời gian mỗi tuần, và làm Chrome extension, web app theo yêu cầu, từ dự án lớn đến chỉnh sửa nhỏ. Tôi làm việc với doanh nghiệp khắp nước Mỹ qua Zoom và email, bằng tiếng Việt hoặc tiếng Anh.">I'm Vu, a Senior Software Engineer in Seattle with 10+ years of building for the web, and your site handyman. I build websites that bring in customers, automate the busywork that eats your week, and make custom Chrome extensions and web apps, from big builds to small fixes. I work with businesses anywhere in the US over Zoom and email, in English or Vietnamese.</p>
       <div class="actions">
-        <a class="btn btn-primary" href="#contact">Book a free 20-min call</a>
-        <a class="btn btn-ghost" href="#work">See my work</a>
+        <a class="btn btn-primary" href="#contact" data-vi="Đặt lịch gọi miễn phí 20 phút">Book a free 20-min call</a>
+        <a class="btn btn-ghost" href="#work" data-vi="Xem dự án">See my work</a>
       </div>
       <div class="stats">
-        <div><b>10+ years</b><span>building for the web</span></div>
-        <div><b>~800</b><span>people use my Chrome extensions</span></div>
-        <div><b>4.9 ★</b><span>Eng-Vi Dictionary, 15 ratings</span></div>
-        <div><b>Fixed price</b><span>quoted before any work starts</span></div>
+        <div data-vi="<b>10+ năm</b><span>kinh nghiệm làm web</span>"><b>10+ years</b><span>building for the web</span></div>
+        <div data-vi="<b>~800</b><span>người dùng Chrome extension của tôi</span>"><b>~800</b><span>people use my Chrome extensions</span></div>
+        <div data-vi="<b>4.9 ★</b><span>Eng-Vi Dictionary, 15 đánh giá</span>"><b>4.9 ★</b><span>Eng-Vi Dictionary, 15 ratings</span></div>
+        <div data-vi="<b>Giá trọn gói</b><span>báo giá trước khi bắt đầu</span>"><b>Fixed price</b><span>quoted before any work starts</span></div>
       </div>
     </div>
   </section>
@@ -209,34 +219,34 @@ footer a { color: var(--muted); }
   <section class="section alt" id="services">
     <div class="wrap">
       <div class="head">
-        <p class="eyebrow">Services</p>
-        <h2 class="h2">What I can do for you</h2>
-        <p class="lead">If you've ever thought "there has to be an easier way to do this," that's usually where I come in.</p>
+        <p class="eyebrow" data-vi="Dịch vụ">Services</p>
+        <h2 class="h2" data-vi="Tôi có thể giúp gì cho bạn">What I can do for you</h2>
+        <p class="lead" data-vi="Nếu bạn từng nghĩ “chắc phải có cách nào dễ hơn”, thì đó thường là lúc tôi giúp được.">If you've ever thought "there has to be an easier way to do this," that's usually where I come in.</p>
       </div>
       <div class="grid">
         <div class="card">
           <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 6.5h.01M10 6.5h.01"/></svg></div>
-          <h3>Websites</h3>
-          <p>A fast, good-looking site that works on phones, shows up on Google, and turns visitors into calls and bookings.</p>
-          <ul><li>New sites and redesigns</li><li>Booking, menus, quote forms</li><li>Google Business &amp; SEO basics</li></ul>
+          <h3>Website<span data-vi="">s</span></h3>
+          <p data-vi="Website nhanh, đẹp, hiển thị tốt trên điện thoại, dễ tìm thấy trên Google, và biến người xem thành cuộc gọi, lượt đặt hẹn.">A fast, good-looking site that works on phones, shows up on Google, and turns visitors into calls and bookings.</p>
+          <ul data-vi="<li>Làm website mới hoặc thiết kế lại</li><li>Đặt lịch, thực đơn, form báo giá</li><li>Google Business và SEO cơ bản</li>"><li>New sites and redesigns</li><li>Booking, menus, quote forms</li><li>Google Business &amp; SEO basics</li></ul>
         </div>
         <div class="card">
           <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 0 1 14-5.3M20 12a8 8 0 0 1-14 5.3"/><path d="M18 3v4h-4M6 21v-4h4"/></svg></div>
-          <h3>Automation</h3>
-          <p>If you do it by hand every week, it can probably run itself, with you approving the steps that matter.</p>
-          <ul><li>Invoices and billing runs</li><li>Spreadsheets and reports</li><li>Data entry between tools</li></ul>
+          <h3 data-vi="Tự động hóa">Automation</h3>
+          <p data-vi="Việc gì bạn làm tay mỗi tuần thì thường có thể tự chạy, còn bạn chỉ cần duyệt những bước quan trọng.">If you do it by hand every week, it can probably run itself, with you approving the steps that matter.</p>
+          <ul data-vi="<li>Hóa đơn và thu tiền định kỳ</li><li>Bảng tính và báo cáo</li><li>Nhập liệu giữa các phần mềm</li>"><li>Invoices and billing runs</li><li>Spreadsheets and reports</li><li>Data entry between tools</li></ul>
         </div>
         <div class="card">
           <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6v4h4v6h-4v4H9v-4H5V7h4z"/></svg></div>
-          <h3>Chrome extensions</h3>
-          <p>Custom tools that live in your team's browser and add the buttons your software is missing.</p>
-          <ul><li>Private tools for your team</li><li>Public Web Store extensions</li><li>Updates to existing extensions</li></ul>
+          <h3>Chrome extension<span data-vi="">s</span></h3>
+          <p data-vi="Công cụ riêng chạy ngay trong trình duyệt của nhóm bạn, thêm những nút bấm mà phần mềm hiện tại còn thiếu.">Custom tools that live in your team's browser and add the buttons your software is missing.</p>
+          <ul data-vi="<li>Công cụ nội bộ cho nhóm</li><li>Extension công khai trên Web Store</li><li>Cập nhật extension có sẵn</li>"><li>Private tools for your team</li><li>Public Web Store extensions</li><li>Updates to existing extensions</li></ul>
         </div>
         <div class="card">
           <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M13.5 5l-3 14"/></svg></div>
-          <h3>Web apps</h3>
-          <p>Customer portals, internal dashboards and MVPs, from first sketch to launch, with code you own.</p>
-          <ul><li>Accounts and payments</li><li>Admin dashboards</li><li>AI features, done carefully</li></ul>
+          <h3>Web app<span data-vi="">s</span></h3>
+          <p data-vi="Cổng thông tin khách hàng, trang quản lý nội bộ và MVP, từ bản phác thảo đầu tiên đến lúc ra mắt, mã nguồn thuộc về bạn.">Customer portals, internal dashboards and MVPs, from first sketch to launch, with code you own.</p>
+          <ul data-vi="<li>Tài khoản và thanh toán</li><li>Trang quản trị</li><li>Tính năng AI, làm cẩn thận</li>"><li>Accounts and payments</li><li>Admin dashboards</li><li>AI features, done carefully</li></ul>
         </div>
       </div>
     </div>
@@ -245,9 +255,9 @@ footer a { color: var(--muted); }
   <section class="section" id="work">
     <div class="wrap">
       <div class="head">
-        <p class="eyebrow">Selected work</p>
-        <h2 class="h2">Things I've built and still run</h2>
-        <p class="lead">Four extensions live on the Chrome Web Store, used by around 800 people, plus tools I rely on every month.</p>
+        <p class="eyebrow" data-vi="Dự án tiêu biểu">Selected work</p>
+        <h2 class="h2" data-vi="Những thứ tôi đã làm và vẫn đang vận hành">Things I've built and still run</h2>
+        <p class="lead" data-vi="Bốn extension đang có trên Chrome Web Store với khoảng 800 người dùng, cùng các ứng dụng và quy trình tự động đang vận hành những công việc kinh doanh thật.">Four extensions live on the Chrome Web Store, used by around 800 people, plus apps and automations that run real businesses.</p>
       </div>
 
       <div class="ext-grid">
@@ -255,38 +265,50 @@ footer a { color: var(--muted); }
           <div class="ext-shot"><img src="img/eng-vi-dictionary.webp" alt="Eng-Vi Dictionary showing a Vietnamese definition popup over a word on a web page" width="1200" height="750" loading="lazy"></div>
           <div class="ext-body">
             <div class="ext-title"><img src="img/eng-vi-dictionary-icon.png" alt="" width="32" height="32"><h3>Eng-Vi Dictionary</h3></div>
-            <p>Double-click any English word on any page to see its Vietnamese meaning and pronunciation in place, without leaving the page.</p>
-            <div class="meta"><span class="chip">536 users</span><span class="chip">4.9 ★</span><a href="https://chromewebstore.google.com/detail/nidobgjfikdhjkmdbpppjokehnnfcefb" target="_blank" rel="noopener">View on Web Store →</a></div>
+            <p data-vi="Nhấp đúp vào bất kỳ từ tiếng Anh nào trên trang để xem nghĩa tiếng Việt và cách phát âm ngay tại chỗ, không cần rời trang.">Double-click any English word on any page to see its Vietnamese meaning and pronunciation in place, without leaving the page.</p>
+            <div class="meta"><span class="chip" data-vi="536 người dùng">536 users</span><span class="chip">4.9 ★</span><a href="https://chromewebstore.google.com/detail/nidobgjfikdhjkmdbpppjokehnnfcefb" target="_blank" rel="noopener" data-vi="Xem trên Web Store →">View on Web Store →</a></div>
           </div>
         </article>
         <article class="ext">
           <div class="ext-shot"><img src="img/css-comparer.webp" alt="CSS Comparer side panel listing CSS differences between two selected elements" width="1200" height="750" loading="lazy"></div>
           <div class="ext-body">
             <div class="ext-title"><img src="img/css-comparer-icon.png" alt="" width="32" height="32"><h3>CSS Comparer</h3></div>
-            <p>Pick two elements on a page and see their CSS side by side, filtered down to only the differences. Built for front-end developers.</p>
-            <div class="meta"><span class="chip">214 users</span><span class="chip">5.0 ★</span><a href="https://chromewebstore.google.com/detail/menkcoaecfcchpoeldlobgalhhchnoed" target="_blank" rel="noopener">View on Web Store →</a></div>
+            <p data-vi="Chọn hai phần tử trên trang và xem CSS của chúng cạnh nhau, chỉ hiện những điểm khác biệt. Dành cho lập trình viên front-end.">Pick two elements on a page and see their CSS side by side, filtered down to only the differences. Built for front-end developers.</p>
+            <div class="meta"><span class="chip" data-vi="214 người dùng">214 users</span><span class="chip">5.0 ★</span><a href="https://chromewebstore.google.com/detail/menkcoaecfcchpoeldlobgalhhchnoed" target="_blank" rel="noopener" data-vi="Xem trên Web Store →">View on Web Store →</a></div>
           </div>
         </article>
         <article class="ext">
           <div class="ext-shot"><img src="img/tabrules.webp" alt="TabRules popup listing active rename, group and stale-tab rules" width="1200" height="750" loading="lazy"></div>
           <div class="ext-body">
             <div class="ext-title"><img src="img/tabrules-icon.png" alt="" width="32" height="32"><h3>TabRules</h3></div>
-            <p>Renames, groups and tidies up stale browser tabs from simple rules you write once. Runs 100% locally, with no tracking.</p>
-            <div class="meta"><span class="chip">New</span><span class="chip">Manifest V3</span><a href="https://chromewebstore.google.com/detail/ckliahaalgfhhiaplbkhgiikegjihmkc" target="_blank" rel="noopener">View on Web Store →</a></div>
+            <p data-vi="Tự đổi tên, gom nhóm và dọn các tab cũ theo những quy tắc đơn giản bạn chỉ cần viết một lần. Chạy hoàn toàn trên máy, không theo dõi người dùng.">Renames, groups and tidies up stale browser tabs from simple rules you write once. Runs 100% locally, with no tracking.</p>
+            <div class="meta"><span class="chip" data-vi="Mới">New</span><span class="chip">Manifest V3</span><a href="https://chromewebstore.google.com/detail/ckliahaalgfhhiaplbkhgiikegjihmkc" target="_blank" rel="noopener" data-vi="Xem trên Web Store →">View on Web Store →</a></div>
           </div>
         </article>
         <article class="ext">
           <div class="ext-shot blank"><img src="img/real-estate-qr-pro-icon.png" alt="Real Estate QR Pro logo" width="112" height="112" loading="lazy"></div>
           <div class="ext-body">
             <div class="ext-title"><img src="img/real-estate-qr-pro-icon.png" alt="" width="32" height="32"><h3>Real Estate QR Pro</h3></div>
-            <p>Generates branded QR codes for real estate listings, with a logo overlay and custom colors, ready for flyers and yard signs.</p>
-            <div class="meta"><span class="chip">New</span><span class="chip">For realtors</span><a href="https://chromewebstore.google.com/detail/njleaobdmfjhboanpmikbhndghjikoeh" target="_blank" rel="noopener">View on Web Store →</a></div>
+            <p data-vi="Tạo mã QR mang thương hiệu cho tin đăng bất động sản, có logo và màu tùy chỉnh, sẵn sàng in lên tờ rơi và bảng hiệu.">Generates branded QR codes for real estate listings, with a logo overlay and custom colors, ready for flyers and yard signs.</p>
+            <div class="meta"><span class="chip" data-vi="Mới">New</span><span class="chip" data-vi="Cho môi giới nhà đất">For realtors</span><a href="https://chromewebstore.google.com/detail/njleaobdmfjhboanpmikbhndghjikoeh" target="_blank" rel="noopener" data-vi="Xem trên Web Store →">View on Web Store →</a></div>
           </div>
         </article>
       </div>
 
-      <h3 class="sub-head">Automation &amp; apps</h3>
+      <h3 class="sub-head" data-vi="Tự động hóa và ứng dụng">Automation &amp; apps</h3>
       <div class="case">
+        <article class="card">
+          <div class="mock" aria-hidden="true">
+            <div class="row"><span><span class="t">#41</span> Bánh tét × 6</span><span class="done">✓ paid</span></div>
+            <div class="row"><span><span class="t">#42</span> Egg rolls × 2 trays</span><span class="wait">due Sat</span></div>
+            <div class="row"><span><span class="t">Sat</span> prep list</span><span class="done">✓ 14 dishes</span></div>
+            <div class="row"><span><span class="t">#41</span> receipt texted</span><span class="done">✓</span></div>
+            <div class="row"><span><span class="t">menu</span> link shared</span><span class="done">✓ 70 dishes</span></div>
+          </div>
+          <p class="label" data-vi="Web app · Supabase, Postgres, dùng tốt trên điện thoại">Web app · Supabase, Postgres, works on phones</p>
+          <h3 data-vi="Quản lý đơn hàng cho bếp gia đình">Order management for a home kitchen</h3>
+          <p data-vi="Một cơ sở nấu đồ ăn gia đình từng quản lý mọi thứ bằng một file Google Sheet ngày càng rối. Giờ chỉ vài thao tác là lên đơn, thực đơn 70 món kèm hình được gửi cho khách qua một đường link, còn hóa đơn, lịch sử khách hàng, chi phí và lợi nhuận hằng tháng đều có sẵn. Song ngữ Việt–Anh, hỗ trợ nhiều tài khoản ngay từ đầu, và được kiểm tra bằng 52 bài test tự động.">A family catering business ran on one overgrown Google Sheet. Now an order takes a few taps, the 70-dish menu with photos goes out to customers as a link, and receipts, customer history, expenses and monthly profit are always at hand. Bilingual (Vietnamese and English), multi-account from day one, and backed by 52 automated tests.</p>
+        </article>
         <article class="card">
           <div class="mock" aria-hidden="true">
             <div class="row"><span><span class="t">10th 08:00</span> fetch utility bills</span><span class="done">✓ 4/4</span></div>
@@ -295,9 +317,9 @@ footer a { color: var(--muted); }
             <div class="row"><span><span class="t">10th 08:14</span> ledger updated</span><span class="done">✓</span></div>
             <div class="row"><span><span class="t">10th 08:15</span> tenant messages drafted</span><span class="done">✓</span></div>
           </div>
-          <p class="label">Automation · runs every month</p>
-          <h3>Rental billing on autopilot</h3>
-          <p>A monthly chore that used to take hours: pull four utility bills, split them between two units, post the charges, update the ledger and message the tenants. Now it runs by itself on the 10th, and I approve four checkpoints along the way. The same pattern works for invoicing, reporting and data entry in any small business.</p>
+          <p class="label" data-vi="Tự động hóa · chạy mỗi tháng">Automation · runs every month</p>
+          <h3 data-vi="Thu tiền nhà tự động">Rental billing on autopilot</h3>
+          <p data-vi="Việc hằng tháng từng mất hàng giờ: lấy bốn hóa đơn điện nước, chia cho hai căn, ghi các khoản phí, cập nhật sổ sách và nhắn tin cho người thuê. Giờ nó tự chạy vào ngày 10, và tôi chỉ duyệt bốn bước kiểm tra trong quá trình. Cách làm này áp dụng được cho hóa đơn, báo cáo và nhập liệu ở bất kỳ doanh nghiệp nhỏ nào.">A monthly chore that used to take hours: pull four utility bills, split them between two units, post the charges, update the ledger and message the tenants. Now it runs by itself on the 10th, and I approve four checkpoints along the way. The same pattern works for invoicing, reporting and data entry in any small business.</p>
         </article>
         <article class="card">
           <div class="mock" aria-hidden="true">
@@ -305,9 +327,9 @@ footer a { color: var(--muted); }
             <div class="bubble ai">Sure. You were getting ready for your first 10K and wanted a training plan…</div>
             <div class="bubble me">Yes! Let's update it.</div>
           </div>
-          <p class="label">Web app · Next.js, Postgres, installable on phones</p>
-          <h3>AI chat app with subscriptions</h3>
-          <p>A complete product, not a demo: sign-up and login, a chat that remembers context, paid plans with checkout and cancellation, data export and account deletion, an admin console, and safety rules that route people in crisis to real help. It's backed by 64 automated tests.</p>
+          <p class="label" data-vi="Web app · Next.js, Postgres, cài được trên điện thoại">Web app · Next.js, Postgres, installable on phones</p>
+          <h3 data-vi="Ứng dụng chat AI có gói thuê bao">AI chat app with subscriptions</h3>
+          <p data-vi="Một sản phẩm hoàn chỉnh, không phải bản demo: đăng ký và đăng nhập, khung chat nhớ ngữ cảnh, gói trả phí với thanh toán và hủy gói, xuất dữ liệu và xóa tài khoản, trang quản trị, cùng các quy tắc an toàn đưa người đang gặp khủng hoảng đến nơi hỗ trợ thật sự. Được kiểm tra bằng 64 bài test tự động.">A complete product, not a demo: sign-up and login, a chat that remembers context, paid plans with checkout and cancellation, data export and account deletion, an admin console, and safety rules that route people in crisis to real help. It's backed by 64 automated tests.</p>
         </article>
       </div>
     </div>
@@ -316,14 +338,14 @@ footer a { color: var(--muted); }
   <section class="section alt" id="process">
     <div class="wrap">
       <div class="head">
-        <p class="eyebrow">How it works</p>
-        <h2 class="h2">Simple, from first call to launch</h2>
+        <p class="eyebrow" data-vi="Quy trình">How it works</p>
+        <h2 class="h2" data-vi="Đơn giản, từ cuộc gọi đầu tiên đến lúc ra mắt">Simple, from first call to launch</h2>
       </div>
       <div class="grid steps">
-        <div class="card"><h3>Free 20-min call</h3><p>We talk over Zoom about what you need and what's slowing you down. No prep needed.</p></div>
-        <div class="card"><h3>Fixed quote</h3><p>You get a written scope, price and timeline. You know the cost before any work starts.</p></div>
-        <div class="card"><h3>Build with weekly demos</h3><p>You see real progress every week and can change direction early, not after it's finished.</p></div>
-        <div class="card"><h3>Launch and handover</h3><p>I launch it, show you how it works, and hand over everything. You own the code and accounts.</p></div>
+        <div class="card"><h3 data-vi="Gọi miễn phí 20 phút">Free 20-min call</h3><p data-vi="Chúng ta trao đổi qua Zoom về nhu cầu của bạn và những gì đang làm bạn mất thời gian. Không cần chuẩn bị gì.">We talk over Zoom about what you need and what's slowing you down. No prep needed.</p></div>
+        <div class="card"><h3 data-vi="Báo giá trọn gói">Fixed quote</h3><p data-vi="Bạn nhận phạm vi công việc, giá và thời gian bằng văn bản. Bạn biết chi phí trước khi bắt đầu.">You get a written scope, price and timeline. You know the cost before any work starts.</p></div>
+        <div class="card"><h3 data-vi="Demo mỗi tuần">Build with weekly demos</h3><p data-vi="Mỗi tuần bạn đều thấy tiến độ thật và có thể đổi hướng sớm, không phải đợi đến khi làm xong.">You see real progress every week and can change direction early, not after it's finished.</p></div>
+        <div class="card"><h3 data-vi="Ra mắt và bàn giao">Launch and handover</h3><p data-vi="Tôi đưa sản phẩm lên, hướng dẫn bạn cách dùng và bàn giao mọi thứ. Mã nguồn và tài khoản đều thuộc về bạn.">I launch it, show you how it works, and hand over everything. You own the code and accounts.</p></div>
       </div>
     </div>
   </section>
@@ -332,35 +354,35 @@ footer a { color: var(--muted); }
   <section class="section" id="pricing">
     <div class="wrap">
       <div class="head">
-        <p class="eyebrow">Pricing</p>
-        <h2 class="h2">Clear starting prices</h2>
-        <p class="lead">Every project gets a fixed quote after a free call. These are starting points, so you know the ballpark before we talk.</p>
+        <p class="eyebrow" data-vi="Bảng giá">Pricing</p>
+        <h2 class="h2" data-vi="Giá khởi điểm rõ ràng">Clear starting prices</h2>
+        <p class="lead" data-vi="Mỗi dự án đều có báo giá trọn gói sau cuộc gọi miễn phí. Đây là mức giá khởi điểm để bạn hình dung trước khi trao đổi.">Every project gets a fixed quote after a free call. These are starting points, so you know the ballpark before we talk.</p>
       </div>
       <div class="grid">
         <div class="card">
-          <div class="tier-name">Automation</div>
-          <div class="price"><small>from</small> $750</div>
-          <p>One workflow automated end to end: spreadsheets, email, invoicing or data entry.</p>
+          <div class="tier-name" data-vi="Tự động hóa">Automation</div>
+          <div class="price"><small data-vi="từ">from</small> $750</div>
+          <p data-vi="Tự động hóa trọn vẹn một quy trình: bảng tính, email, hóa đơn hoặc nhập liệu.">One workflow automated end to end: spreadsheets, email, invoicing or data entry.</p>
         </div>
         <div class="card featured">
-          <div class="tier-name">Small-business website</div>
-          <div class="price"><small>from</small> $1,500</div>
-          <p>Up to 5 pages, mobile-ready, SEO basics and a contact or booking form.</p>
+          <div class="tier-name" data-vi="Website cho doanh nghiệp nhỏ">Small-business website</div>
+          <div class="price"><small data-vi="từ">from</small> $1,500</div>
+          <p data-vi="Tối đa 5 trang, hiển thị tốt trên điện thoại, SEO cơ bản và form liên hệ hoặc đặt lịch.">Up to 5 pages, mobile-ready, SEO basics and a contact or booking form.</p>
         </div>
         <div class="card">
           <div class="tier-name">Chrome extension</div>
-          <div class="price"><small>from</small> $750</div>
-          <p>A simple private tool for your team from $750. A public Web Store extension, with listing and review, from $2,000.</p>
+          <div class="price"><small data-vi="từ">from</small> $750</div>
+          <p data-vi="Công cụ nội bộ đơn giản cho nhóm từ $750. Extension công khai trên Web Store, kèm trang giới thiệu và quy trình duyệt, từ $2,000.">A simple private tool for your team from $750. A public Web Store extension, with listing and review, from $2,000.</p>
         </div>
         <div class="card">
           <div class="tier-name">Web app / MVP</div>
-          <div class="price"><small>from</small> $5,000</div>
-          <p>Accounts, payments and dashboards, launched and handed over with docs.</p>
+          <div class="price"><small data-vi="từ">from</small> $5,000</div>
+          <p data-vi="Tài khoản, thanh toán và trang quản lý, ra mắt và bàn giao kèm tài liệu.">Accounts, payments and dashboards, launched and handed over with docs.</p>
         </div>
       </div>
       <div class="extras">
-        <span><b>Monthly care</b> from $150/mo: updates, fixes and small changes</span>
-        <span><b>Ad-hoc work</b> $100/hr</span>
+        <span data-vi="<b>Bảo trì hằng tháng</b> từ $150/tháng: cập nhật, sửa lỗi và chỉnh sửa nhỏ"><b>Monthly care</b> from $150/mo: updates, fixes and small changes</span>
+        <span data-vi="<b>Việc lẻ, sửa nhanh</b> $100/giờ"><b>Odd jobs &amp; quick fixes</b> $100/hr</span>
       </div>
     </div>
   </section>
@@ -368,17 +390,17 @@ footer a { color: var(--muted); }
   <section class="section alt" id="about">
     <div class="wrap about">
       <div class="prose">
-        <p class="eyebrow">About</p>
-        <h2 class="h2">One engineer, start to finish</h2>
-        <p>After graduating from the University of Washington, I've worked as a Senior Software Engineer at a tech company in Seattle. I handle work up and down the stack to build web applications with a world-class user experience.</p>
-        <p>Outside of work, I build things. Since 2015 that's been Chrome extensions, Android apps, a real-time chat app, browser games, and lately AI tools and automations. My own rental business runs on software I wrote.</p>
-        <p>When you hire me, you get the same engineer and the same standards, and you talk directly to the person writing your code. No account managers, no hand-offs. I'm based in Seattle and work with businesses anywhere in the US.</p>
+        <p class="eyebrow" data-vi="Giới thiệu">About</p>
+        <h2 class="h2" data-vi="Một kỹ sư, từ đầu đến cuối">One engineer, start to finish</h2>
+        <p data-vi="Sau khi tốt nghiệp Đại học Washington, tôi làm Senior Software Engineer tại một công ty công nghệ ở Seattle. Tôi đảm nhận mọi tầng của hệ thống, từ giao diện đến máy chủ, để xây dựng các ứng dụng web với trải nghiệm người dùng đẳng cấp.">After graduating from the University of Washington, I've worked as a Senior Software Engineer at a tech company in Seattle. I handle work up and down the stack to build web applications with a world-class user experience.</p>
+        <p data-vi="Ngoài giờ làm, tôi thích tự tay làm sản phẩm. Từ 2015 đến nay là Chrome extension, ứng dụng Android, ứng dụng chat thời gian thực, game trên trình duyệt, và gần đây là công cụ AI và tự động hóa. Việc kinh doanh cho thuê nhà của tôi chạy bằng phần mềm tôi tự viết.">Outside of work, I build things. Since 2015 that's been Chrome extensions, Android apps, a real-time chat app, browser games, and lately AI tools and automations. My own rental business runs on software I wrote.</p>
+        <p data-vi="Khi làm việc với tôi, bạn có cùng một kỹ sư với cùng tiêu chuẩn, và trao đổi trực tiếp với người viết mã cho bạn. Không qua trung gian, không chuyển tay. Tôi ở Seattle và làm việc với doanh nghiệp khắp nước Mỹ, bằng tiếng Việt hoặc tiếng Anh.">When you hire me, you get the same engineer and the same standards, and you talk directly to the person writing your code. No account managers, no hand-offs. I'm based in Seattle and work with businesses anywhere in the US, in English or Vietnamese.</p>
       </div>
       <div class="timeline" aria-label="Background">
-        <div><b>Education</b><span>University of Washington</span></div>
-        <div><b>Day job</b><span>Senior Software Engineer at a Seattle tech company, building full-stack web applications</span></div>
-        <div><b>2015 – 2016</b><span>Side projects: a page-speed Chrome extension, Android apps (an English–Vietnamese dictionary, tip and sale calculators), a real-time chat app in Node.js and Socket.IO, browser games</span></div>
-        <div><b>Today</b><span>Four extensions on the Web Store (~800 users), an AI chat app built end to end, RAG chatbot experiments, and automations that run my own business</span></div>
+        <div data-vi="<b>Học vấn</b><span>Đại học Washington</span>"><b>Education</b><span>University of Washington</span></div>
+        <div data-vi="<b>Công việc chính</b><span>Senior Software Engineer tại một công ty công nghệ ở Seattle, xây dựng ứng dụng web full-stack</span>"><b>Day job</b><span>Senior Software Engineer at a Seattle tech company, building full-stack web applications</span></div>
+        <div data-vi="<b>2015 – 2016</b><span>Dự án cá nhân: Chrome extension đo tốc độ trang, ứng dụng Android (từ điển Anh–Việt, máy tính tiền tip và giảm giá), ứng dụng chat thời gian thực bằng Node.js và Socket.IO, game trên trình duyệt</span>"><b>2015 – 2016</b><span>Side projects: a page-speed Chrome extension, Android apps (an English–Vietnamese dictionary, tip and sale calculators), a real-time chat app in Node.js and Socket.IO, browser games</span></div>
+        <div data-vi="<b>Hiện tại</b><span>Bốn extension trên Web Store (~800 người dùng), ứng dụng quản lý đơn hàng cho một bếp gia đình, ứng dụng chat AI làm từ đầu đến cuối, thử nghiệm chatbot RAG, và các quy trình tự động vận hành việc kinh doanh của tôi</span>"><b>Today</b><span>Four extensions on the Web Store (~800 users), an order-management app for a home kitchen, an AI chat app built end to end, RAG chatbot experiments, and automations that run my own business</span></div>
       </div>
     </div>
   </section>
@@ -386,15 +408,16 @@ footer a { color: var(--muted); }
   <section class="section" id="faq">
     <div class="wrap">
       <div class="head">
-        <p class="eyebrow">FAQ</p>
-        <h2 class="h2">Common questions</h2>
+        <p class="eyebrow" data-vi="Hỏi đáp">FAQ</p>
+        <h2 class="h2" data-vi="Câu hỏi thường gặp">Common questions</h2>
       </div>
       <div class="faq">
-        <details><summary>I'm not in Seattle. Can we still work together?</summary><p>Yes. I work with businesses anywhere in the US. We meet on Zoom, and everything else happens over email.</p></details>
-        <details><summary>Who owns the website or code when we're done?</summary><p>You do. The code, the domain and the accounts are in your name. I hand over everything with short docs so anyone can maintain it later.</p></details>
-        <details><summary>What if I'm not sure what I need?</summary><p>That's what the free call is for. Describe the manual version: the clicking, the copying, the spreadsheet. I'll tell you honestly whether it's worth building, and roughly what it would cost.</p></details>
-        <details><summary>How does payment work?</summary><p>Payment is split into milestones that we agree on in the written quote, so you never pay for work you haven't seen.</p></details>
-        <details><summary>What happens after launch?</summary><p>You can call me when you need something, at $100/hr, or pick a monthly care plan from $150/mo that covers updates, fixes and small changes.</p></details>
+        <details><summary data-vi="Tôi không ở Seattle. Vẫn làm việc được chứ?">I'm not in Seattle. Can we still work together?</summary><p data-vi="Được. Tôi làm việc với doanh nghiệp khắp nước Mỹ. Chúng ta họp qua Zoom, còn lại trao đổi qua email.">Yes. I work with businesses anywhere in the US. We meet on Zoom, and everything else happens over email.</p></details>
+        <details><summary data-vi="Mình trao đổi bằng tiếng Việt được không?">Can we talk in Vietnamese?</summary><p data-vi="Được. Tôi nói được cả tiếng Việt và tiếng Anh, nên chúng ta có thể họp, làm báo giá và làm website bằng ngôn ngữ bạn muốn, hoặc song ngữ.">Yes. I speak both Vietnamese and English, so we can meet, write the quote and build your site in whichever you prefer, or in both.</p></details>
+        <details><summary data-vi="Khi xong việc, ai sở hữu website hoặc mã nguồn?">Who owns the website or code when we're done?</summary><p data-vi="Bạn. Mã nguồn, tên miền và các tài khoản đều đứng tên bạn. Tôi bàn giao mọi thứ kèm tài liệu ngắn gọn để sau này ai cũng có thể bảo trì.">You do. The code, the domain and the accounts are in your name. I hand over everything with short docs so anyone can maintain it later.</p></details>
+        <details><summary data-vi="Nếu tôi chưa rõ mình cần gì thì sao?">What if I'm not sure what I need?</summary><p data-vi="Cuộc gọi miễn phí là để làm việc đó. Hãy mô tả cách bạn đang làm thủ công: những cú nhấp chuột, những lần sao chép, cái bảng tính. Tôi sẽ nói thật liệu có đáng làm không, và chi phí khoảng bao nhiêu.">That's what the free call is for. Describe the manual version: the clicking, the copying, the spreadsheet. I'll tell you honestly whether it's worth building, and roughly what it would cost.</p></details>
+        <details><summary data-vi="Thanh toán như thế nào?">How does payment work?</summary><p data-vi="Thanh toán được chia theo từng giai đoạn mà chúng ta thống nhất trong báo giá, nên bạn không bao giờ trả tiền cho phần việc mình chưa thấy.">Payment is split into milestones that we agree on in the written quote, so you never pay for work you haven't seen.</p></details>
+        <details><summary data-vi="Sau khi ra mắt thì sao?">What happens after launch?</summary><p data-vi="Bạn có thể gọi tôi khi cần, với giá $100/giờ, hoặc chọn gói bảo trì hằng tháng từ $150/tháng gồm cập nhật, sửa lỗi và chỉnh sửa nhỏ.">You can call me when you need something, at $100/hr, or pick a monthly care plan from $150/mo that covers updates, fixes and small changes.</p></details>
       </div>
     </div>
   </section>
@@ -402,22 +425,22 @@ footer a { color: var(--muted); }
   <section class="section contact" id="contact">
     <div class="wrap contact-grid">
       <div>
-        <p class="eyebrow" style="color:#A5B4FC">Contact</p>
-        <h2 class="h2">Tell me what's slowing you down</h2>
-        <p>A few sentences is enough. I'll reply within one business day (Pacific time) with next steps or a time for a free call.</p>
-        <p style="margin-top:20px">Prefer email? <a href="mailto:vunguyenk@gmail.com">vunguyenk@gmail.com</a></p>
+        <p class="eyebrow" style="color:#A5B4FC" data-vi="Liên hệ">Contact</p>
+        <h2 class="h2" data-vi="Cho tôi biết điều gì đang làm bạn mất thời gian">Tell me what's slowing you down</h2>
+        <p data-vi="Vài câu là đủ. Tôi sẽ trả lời trong vòng một ngày làm việc (giờ Thái Bình Dương) với các bước tiếp theo hoặc hẹn giờ gọi miễn phí.">A few sentences is enough. I'll reply within one business day (Pacific time) with next steps or a time for a free call.</p>
+        <p style="margin-top:20px" data-vi="Thích dùng email hơn? <a href='mailto:vunguyenk@gmail.com'>vunguyenk@gmail.com</a>">Prefer email? <a href="mailto:vunguyenk@gmail.com">vunguyenk@gmail.com</a></p>
       </div>
       <form class="form" id="contact-form" novalidate>
-        <label>Name<input name="name" type="text" autocomplete="name" required></label>
+        <label><span data-vi="Tên">Name</span><input name="name" type="text" autocomplete="name" required></label>
         <label>Email<input name="email" type="email" autocomplete="email" required></label>
-        <label>What do you need?
+        <label><span data-vi="Bạn cần gì?">What do you need?</span>
           <select name="service">
-            <option>Website</option><option>Automation</option><option>Chrome extension</option><option>Web app</option><option>Not sure yet</option>
+            <option value="Website">Website</option><option value="Automation" data-vi="Tự động hóa">Automation</option><option value="Chrome extension">Chrome extension</option><option value="Web app">Web app</option><option value="Not sure yet" data-vi="Chưa chắc">Not sure yet</option>
           </select>
         </label>
-        <label>Details<textarea name="message" rows="5" required placeholder="What does the manual version look like today?"></textarea></label>
+        <label><span data-vi="Chi tiết">Details</span><textarea name="message" rows="5" required placeholder="What does the manual version look like today?" data-vi-ph="Hiện giờ bạn đang làm thủ công như thế nào?"></textarea></label>
         <label class="hp" aria-hidden="true">Leave this empty<input name="_gotcha" type="text" tabindex="-1" autocomplete="off"></label>
-        <button class="btn" type="submit">Send message</button>
+        <button class="btn" type="submit" data-vi="Gửi tin nhắn">Send message</button>
         <p class="form-note" role="status" aria-live="polite"></p>
       </form>
     </div>
@@ -427,7 +450,7 @@ footer a { color: var(--muted); }
 
 <footer>
   <div class="wrap">
-    <span>© <span id="yr">2026</span> Vu Nguyen · Seattle, WA</span>
+    <span>© <span id="yr">2026</span> The Site Handyman · Vu Nguyen · Seattle, WA</span>
     <span><a href="mailto:vunguyenk@gmail.com">vunguyenk@gmail.com</a></span>
   </div>
 </footer>
@@ -440,6 +463,31 @@ const EMAIL = "vunguyenk@gmail.com";
 
 document.getElementById("yr").textContent = new Date().getFullYear();
 
+// Language: English lives in the HTML, Vietnamese in each element's data-vi attribute.
+// Pick order: ?lang=vi link, the visitor's last choice, then their browser language.
+const viEls = document.querySelectorAll("[data-vi]");
+viEls.forEach((el) => (el.dataset.en = el.innerHTML));
+const langBtn = document.getElementById("lang-btn");
+const isVi = () => document.documentElement.lang === "vi";
+const t = (en, vi) => (isVi() ? vi : en);
+function setLang(lang) {
+  document.documentElement.lang = lang;
+  viEls.forEach((el) => (el.innerHTML = lang === "vi" ? el.dataset.vi : el.dataset.en));
+  document.querySelectorAll("[data-vi-ph]").forEach((el) => {
+    el.dataset.enPh ??= el.placeholder;
+    el.placeholder = lang === "vi" ? el.dataset.viPh : el.dataset.enPh;
+  });
+  langBtn.textContent = lang === "vi" ? "English" : "Tiếng Việt";
+  langBtn.lang = lang === "vi" ? "en" : "vi";
+  langBtn.setAttribute("aria-label", lang === "vi" ? "Read in English" : "Đọc bằng tiếng Việt");
+  try { localStorage.setItem("lang", lang); } catch {}
+}
+let saved = null;
+try { saved = localStorage.getItem("lang"); } catch {}
+const initial = new URLSearchParams(location.search).get("lang") || saved || (navigator.language.startsWith("vi") ? "vi" : "en");
+if (initial === "vi") setLang("vi");
+langBtn.addEventListener("click", () => setLang(isVi() ? "en" : "vi"));
+
 const form = document.getElementById("contact-form");
 const note = form.querySelector(".form-note");
 form.addEventListener("submit", async (e) => {
@@ -447,6 +495,7 @@ form.addEventListener("submit", async (e) => {
   if (!form.reportValidity()) return;
   const data = new FormData(form);
   if (data.get("_gotcha")) return;
+  data.set("language", isVi() ? "Vietnamese" : "English");
   if (!FORMSPREE_ID) {
     const body = `${data.get("message")}\n\n${data.get("name")} <${data.get("email")}>`;
     location.href = `mailto:${EMAIL}?subject=${encodeURIComponent("Project inquiry: " + data.get("service"))}&body=${encodeURIComponent(body)}`;
@@ -454,14 +503,14 @@ form.addEventListener("submit", async (e) => {
   }
   const btn = form.querySelector("button");
   btn.disabled = true;
-  note.textContent = "Sending…";
+  note.textContent = t("Sending…", "Đang gửi…");
   try {
     const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, { method: "POST", body: data, headers: { Accept: "application/json" } });
     if (!res.ok) throw new Error(res.status);
     form.reset();
-    note.textContent = "Thanks! I'll reply within one business day.";
+    note.textContent = t("Thanks! I'll reply within one business day.", "Cảm ơn bạn! Tôi sẽ trả lời trong vòng một ngày làm việc.");
   } catch {
-    note.innerHTML = `Something went wrong. Please email <a href="mailto:${EMAIL}">${EMAIL}</a> instead.`;
+    note.innerHTML = t("Something went wrong. Please email", "Có lỗi xảy ra. Vui lòng gửi email tới") + ` <a href="mailto:${EMAIL}">${EMAIL}</a>.`;
   } finally {
     btn.disabled = false;
   }
