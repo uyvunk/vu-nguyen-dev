@@ -9,6 +9,11 @@ One-page freelance site. Static HTML, no build step: open `index.html` in a brow
 - **Vietnamese:** English text lives in the HTML. The Vietnamese for each element sits in its `data-vi` attribute, so edit both when you change copy. Link `https://thesitehandyman.com/?lang=vi` to open the page in Vietnamese. The toggle remembers the visitor's choice, and first-time visitors with a Vietnamese browser get Vietnamese.
 - **Light/dark:** the color tokens are at the top of the `<style>` block. Dark mode follows the visitor's system setting.
 
+## Other pages
+- `privacy/page-management-app.html`: privacy policy for the Facebook app that manages the Pages.
+- `tin-my/` and `privacy/tin-my-reels.html`: home page + privacy policy for "Tin Mỹ Cho Người Việt" (the
+  Vietnamese news page) and its YouTube upload tool. Google Cloud's OAuth Branding page links to both.
+
 ## Deploy (GitHub Pages)
 ```bash
 git remote add origin git@github.com:uyvunk/vu-nguyen-dev.git
