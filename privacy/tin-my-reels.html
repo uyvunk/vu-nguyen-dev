@@ -52,9 +52,11 @@ Facebook and YouTube. It is not offered to the public and has no other users.</p
 
 <h2>Google and YouTube data</h2>
 <ul>
-  <li>The tool asks Google for one permission: to <strong>upload videos to our own YouTube channel</strong>
-      (YouTube Data API, scope <code>youtube.upload</code>).</li>
-  <li>It does not read, collect, store or share data about YouTube viewers or other YouTube users.</li>
+  <li>The tool asks Google for two things, only for our own channel: to <strong>upload our videos</strong>
+      (scope <code>youtube.upload</code>) and to <strong>read and reply to comments on our own videos</strong>
+      (scope <code>youtube.force-ssl</code>). It does not access any other channel.</li>
+  <li>Apart from comments left on our own videos (see "Comments on our posts" below), it does not read, collect, store
+      or share data about YouTube viewers or other YouTube users.</li>
   <li>The sign-in credential is stored only on the operator's own computer and is never shared.</li>
   <li>The tool's use of information received from Google APIs adheres to the
       <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>,
@@ -84,7 +86,8 @@ form at <a href="https://thesitehandyman.com/#contact">thesitehandyman.com</a>.<
 <p>Tin My Reels là công cụ nội bộ của Vu Nguyen (The Site Handyman), chỉ dùng để đăng video của trang tin tức tiếng Việt
 "Tin Mỹ Cho Người Việt" lên kênh YouTube và trang Facebook của chính chúng tôi. Mỗi video đều được duyệt trước khi đăng.</p>
 <ul>
-  <li>Công cụ chỉ xin Google một quyền: đăng video lên kênh YouTube của chúng tôi.</li>
+  <li>Công cụ chỉ xin Google hai quyền, chỉ cho kênh của chúng tôi: đăng video, và đọc/trả lời bình luận trên video
+      của chúng tôi.</li>
   <li>Chúng tôi không thu thập, lưu trữ hay chia sẻ thông tin của người xem.</li>
   <li>Khi bạn bình luận, nội dung bình luận được dùng để trả lời bạn (có dùng AI Claude của Anthropic để soạn câu trả
       lời), không dùng cho quảng cáo và không chia sẻ cho ai khác.</li>
