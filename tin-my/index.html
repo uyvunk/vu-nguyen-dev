@@ -3,38 +3,123 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tin Mỹ Cho Người Việt</title>
-<meta name="description" content="Tin tức nước Mỹ, giải thích bằng tiếng Việt dễ hiểu cho người Việt tại Mỹ.">
+<title>Tin Mỹ Cho Người Việt – Tin tức nước Mỹ bằng tiếng Việt dễ hiểu</title>
+<meta name="description" content="Bản tin ngắn mỗi ngày cho người Việt tại Mỹ: tin tức nước Mỹ, giải thích bằng tiếng Việt dễ hiểu.">
+<meta property="og:title" content="Tin Mỹ Cho Người Việt">
+<meta property="og:description" content="Tin tức nước Mỹ, giải thích bằng tiếng Việt dễ hiểu.">
+<meta property="og:image" content="https://thesitehandyman.com/img/tin-my/hero.jpg">
+<link rel="icon" href="/img/tin-my/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Be Vietnam Pro: made for Vietnamese, so every accent (ỹ, ữ, ở...) comes from the same font -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap">
 <style>
-  body { font: 17px/1.6 Georgia, "Times New Roman", serif; max-width: 720px; margin: 40px auto; padding: 0 20px; color: #222; background: #fff; }
-  h1 { font-size: 2rem; margin-bottom: .2rem; }
-  .tag { color: #666; font-size: 1.05rem; margin-top: 0; }
-  ul { padding-left: 1.2rem; }
-  a { color: #1a5fb4; }
-  .meta { color: #666; font-size: .9rem; margin-top: 2.5rem; }
-  @media (prefers-color-scheme: dark) { body { background: #161616; color: #e6e6e6; } .tag, .meta { color: #999; } a { color: #8ab4f8; } }
+  :root { --navy: #0e1a2b; --navy-2: #16263d; --yellow: #ffd84d; --ink: #1c2430; --muted: #5b6573; --line: #e6e8ec; --bg: #f7f8fa; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: "Be Vietnam Pro", system-ui, sans-serif; color: var(--ink); background: var(--bg); line-height: 1.65; font-size: 17px; }
+  a { color: inherit; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+
+  header.hero { background: var(--navy); color: #fff; overflow: hidden; }
+  .hero .wrap { display: grid; grid-template-columns: 1.05fr 1fr; align-items: center; gap: 40px; padding-top: 56px; padding-bottom: 56px; }
+  .brand { display: flex; align-items: center; gap: 14px; margin-bottom: 28px; }
+  .brand img { width: 56px; height: 56px; border-radius: 50%; }
+  .brand span { font-weight: 700; font-size: 18px; opacity: .9; }
+  h1 { font-size: clamp(34px, 4.3vw, 50px); line-height: 1.1; margin: 0 0 18px; font-weight: 800; letter-spacing: -.5px; }
+  h1 em { font-style: normal; color: var(--yellow); display: block; white-space: nowrap; }
+  .lead { font-size: 19px; color: #d5dbe5; margin: 0 0 28px; max-width: 30em; }
+  .buttons { display: flex; flex-wrap: wrap; gap: 12px; }
+  .btn { display: inline-flex; align-items: center; gap: 10px; padding: 13px 22px; border-radius: 999px; font-weight: 700;
+         text-decoration: none; font-size: 16px; transition: transform .15s; }
+  .btn:hover { transform: translateY(-1px); }
+  .btn svg { width: 20px; height: 20px; }
+  .btn.fb { background: #1877f2; color: #fff; }
+  .btn.yt { background: #ff0033; color: #fff; }
+  .hero figure { margin: 0; position: relative; }
+  .hero figure img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; display: block; border-radius: 18px; box-shadow: 0 20px 60px rgba(0,0,0,.45); }
+  .hero figcaption { position: absolute; right: 10px; bottom: 10px; font-size: 12px; background: rgba(0,0,0,.5); padding: 2px 8px; border-radius: 6px; color: #eee; }
+
+  section { padding: 56px 0 8px; }
+  h2 { font-size: 26px; margin: 0 0 18px; font-weight: 800; }
+  .topics { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px; }
+  .topic { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 18px; }
+  .chip { display: inline-block; color: #fff; font-size: 13px; font-weight: 800; letter-spacing: .5px; padding: 4px 10px; border-radius: 7px; margin-bottom: 8px; }
+  .topic p { margin: 0; color: var(--muted); font-size: 15px; }
+  .promise { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
+  .promise div { background: #fff; border-left: 5px solid var(--yellow); border-radius: 10px; padding: 16px 18px; }
+  .promise b { display: block; margin-bottom: 4px; }
+  .promise span { color: var(--muted); font-size: 15px; }
+  .note { margin-top: 28px; background: #fff8dc; border: 1px solid #f2e2a1; border-radius: 12px; padding: 14px 18px; font-size: 15px; }
+  .en { color: var(--muted); font-size: 15px; font-style: italic; }
+  footer { margin-top: 56px; background: var(--navy-2); color: #c8d0dc; font-size: 14px; }
+  footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; padding-top: 22px; padding-bottom: 22px; }
+  footer a { color: #fff; }
+
+  @media (max-width: 760px) {
+    .hero .wrap { grid-template-columns: 1fr; padding-top: 32px; gap: 28px; }
+    h1 em { white-space: normal; }
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --ink: #e8ebf0; --muted: #a3acb9; --line: #2a3442; --bg: #0b131f; }
+    .topic, .promise div { background: #121d2c; }
+    .note { background: #2a2410; border-color: #4a3f18; }
+  }
 </style>
 </head>
 <body>
-<h1>Tin Mỹ Cho Người Việt</h1>
-<p class="tag">Tin tức nước Mỹ, giải thích bằng tiếng Việt dễ hiểu.</p>
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <div class="brand"><img src="/img/tin-my/logo.png" alt=""><span>Tin Mỹ Cho Người Việt</span></div>
+      <h1>Tin tức nước Mỹ, <em>giải thích dễ hiểu.</em></h1>
+      <p class="lead">Bản tin ngắn mỗi ngày bằng tiếng Việt: tin này thay đổi gì, ai bị ảnh hưởng, và cô chú anh chị nên làm gì.</p>
+      <div class="buttons">
+        <a class="btn fb" href="https://www.facebook.com/1453538767843730" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 22v-8.2h2.8l.4-3.2h-3.2V8.6c0-.9.3-1.6 1.6-1.6h1.7V4.1c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.4H7.3v3.2h2.8V22h3.4z"/></svg>
+          Theo dõi trên Facebook</a>
+        <a class="btn yt" href="https://www.youtube.com/@TinMyChoNguoiViet" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12a31 31 0 0 0 .5 4.8 3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.8 31 31 0 0 0-.5-4.8zM9.7 15.1V8.9l5.8 3.1-5.8 3.1z"/></svg>
+          Xem trên YouTube</a>
+      </div>
+    </div>
+    <figure>
+      <img src="/img/tin-my/hero.jpg" alt="Hai cô chú người Việt uống trà và trò chuyện trong bếp" width="960" height="720">
+      <figcaption>Ảnh minh họa AI</figcaption>
+    </figure>
+  </div>
+</header>
 
-<p>Bản tin ngắn mỗi ngày cho người Việt tại Mỹ: tin này thay đổi gì, ai bị ảnh hưởng, và cô chú anh chị nên làm gì.
-Chủ đề: di trú và quốc tịch, an sinh xã hội và Medicare, thuế và tiền bạc, cảnh báo lừa đảo, tin cộng đồng, tin
-Việt Nam và chuyện về quê.</p>
+<main class="wrap">
+  <section>
+    <h2>Chủ đề</h2>
+    <div class="topics">
+      <div class="topic"><span class="chip" style="background:#1d4ed8">DI TRÚ</span><p>Thẻ xanh, quốc tịch, lịch chiếu khán, thay đổi của sở di trú USCIS.</p></div>
+      <div class="topic"><span class="chip" style="background:#0e7490">AN SINH · Y TẾ</span><p>An sinh xã hội, Medicare, Medicaid và tin y tế từ cơ quan chính thức.</p></div>
+      <div class="topic"><span class="chip" style="background:#15803d">TIỀN BẠC</span><p>Thuế, giá cả, chứng khoán, những tin ảnh hưởng đến túi tiền gia đình.</p></div>
+      <div class="topic"><span class="chip" style="background:#dc2626">CẢNH BÁO</span><p>Chiêu lừa đảo nhắm vào người lớn tuổi, hàng bị thu hồi, tin an toàn.</p></div>
+      <div class="topic"><span class="chip" style="background:#c2410c">CỘNG ĐỒNG</span><p>Tin của người Việt khắp nước Mỹ.</p></div>
+      <div class="topic"><span class="chip" style="background:#7c3aed">VỀ QUÊ</span><p>Tin Việt Nam, chuyến bay, hành lý, thủ tục khi về thăm quê.</p></div>
+    </div>
+  </section>
 
-<ul>
-  <li>Facebook: <a href="https://www.facebook.com/1453538767843730">Tin Mỹ Cho Người Việt</a></li>
-  <li>YouTube: Tin Mỹ Cho Người Việt (Shorts)</li>
-</ul>
+  <section>
+    <h2>Cam kết của trang</h2>
+    <div class="promise">
+      <div><b>Có nguồn rõ ràng</b><span>Mỗi tin đều ghi nguồn và có link bài gốc.</span></div>
+      <div><b>Chỉ đưa sự thật</b><span>Không tin đồn, không đứng về phe chính trị nào.</span></div>
+      <div><b>Minh bạch về AI</b><span>Giọng đọc và hình minh họa có dùng AI, nội dung được kiểm tra với nguồn trước khi đăng.</span></div>
+    </div>
+    <p class="note">Trang chỉ cung cấp thông tin, không phải tư vấn pháp lý, di trú, thuế hay y tế. Với trường hợp riêng,
+      xin liên hệ cơ quan chính phủ hoặc chuyên gia có giấy phép.</p>
+    <p class="en">A Vietnamese-language news page for Vietnamese Americans: US news explained in plain Vietnamese, on Facebook and YouTube Shorts.</p>
+  </section>
+</main>
 
-<p>Mỗi tin đều ghi rõ nguồn. Video có dùng AI cho giọng đọc và hình minh họa. Trang chỉ cung cấp thông tin, không phải
-tư vấn pháp lý, di trú, thuế hay y tế.</p>
-
-<p lang="en"><em>A Vietnamese-language news page for Vietnamese Americans: US news explained in plain Vietnamese,
-on Facebook and YouTube Shorts.</em></p>
-
-<p class="meta"><a href="/privacy/tin-my-reels.html">Privacy Policy / Chính sách quyền riêng tư</a> ·
-Operated by Vu Nguyen, <a href="https://thesitehandyman.com/">The Site Handyman</a></p>
+<footer>
+  <div class="wrap">
+    <span>© 2026 Tin Mỹ Cho Người Việt · Vu Nguyen, <a href="https://thesitehandyman.com/">The Site Handyman</a></span>
+    <a href="/privacy/tin-my-reels.html">Chính sách quyền riêng tư / Privacy Policy</a>
+  </div>
+</footer>
 </body>
 </html>
